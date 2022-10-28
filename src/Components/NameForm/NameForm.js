@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Input} from '../MainPage/styles'
 
-const NameForm = (props) => {
+const NameForm = ({name,age,email,onChangeAge, onChangeEmail,onChangeName,sendData, confirmaEmail,onChangeConfirmaEmail}) => {
   return (
     <Form>
         <label>
@@ -10,17 +10,17 @@ const NameForm = (props) => {
         </label>
         <label>
           Idade:
-          <Input  placeholder="Idade" value={age} onChange={onChangeAge}/>
+          <Input type={"number"} placeholder="Idade" value={age} onChange={onChangeAge}/>
         </label>
         <label>
           E-mail:
-          <Input  placeholder="usuario@usuario.com" value={email} onChange={onChangeEmail}/>
+          <Input type={"email"} placeholder="usuario@usuario.com" value={email} onChange={onChangeEmail} required/>
         </label>
         <label>
           Confirmação de e-mail:
-          <Input  placeholder="usuario@usuario.com" value={email} onChange={onChangeEmail}/>
+          <Input type={"email"} placeholder="usuario@usuario.com" value={confirmaEmail} onChange={onChangeConfirmaEmail} required/>
         </label>
-      <button onClick={sendData}>Enviar dados</button>
+      <button type={'submit'} onClick={sendData}>Enviar dados</button>
       </Form>
   )
 }
